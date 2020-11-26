@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+void segundos(int seg)
+{
+/*
+Para a função funcionar e nessesario o include 
+#include <time.h>
+*/
+   int millisegundos; 
+   int tempoinicial;
+   millisegundos = (1000 * seg);
+    // Guarda o tempo inicial
+    tempoinicial = clock(); 
+  
+    // Repete enquanto não estiver verdadeiro 
+    while (clock() < tempoinicial + millisegundos);
+}
+
+
+
+//função segundos
+//segundos(n segundos);
+int main(){
+
+int num;
+num = 10;
+
+  while(num != 0){
+
+    if (num == 0){
+      break;
+    }
+
+    else{      
+    num--;
+    segundos(1000);
+    printf("Warning! restart in %d seconds!\n ",num);
+      
+      if (num == 0){
+      system("clear");
+      }
+    }
+  }
+return 0;
+}
+
+
+
+
+
+
